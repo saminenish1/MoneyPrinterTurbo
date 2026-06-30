@@ -6,7 +6,9 @@
 
 PEXELS="${MPT_PEXELS_KEY:-}"
 
-cat > "$(dirname "$0")/config.toml" << TOML
+CONFIG_PATH="$PWD/config.toml"
+echo "[entrypoint] writing config to $CONFIG_PATH"
+cat > "$CONFIG_PATH" << TOML
 [app]
 video_source = "pexels"
 pexels_api_keys = ["${PEXELS}"]
